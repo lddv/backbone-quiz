@@ -1,6 +1,9 @@
 My Quiz App
 ===========
 
+Scaffolded with Yeoman
+----------------------
+
 This is a project that makes a quiz application out of a Backbone structure.
 
 Its main goal is to get used to the Backbone syntax and concepts.
