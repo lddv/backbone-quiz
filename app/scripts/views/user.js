@@ -11,22 +11,30 @@ define([
     var UserView = Backbone.View.extend({
         template: JST['app/scripts/templates/user.ejs'],
 
-        tagName: 'h4',
-
+        tagName: 'div',
         id: '',
+        className: 'jumbotron',
 
-        className: '',
-
-        events: {},
+        events: {
+            'click #saveUserButton': 'saveContent'
+        },
 
         initialize: function () {
-            this.listenTo(this.model, 'change', this.render);
+            this.model.on('change', this.render, this);
         },
 
         render: function () {
-            // this.$el.html(this.template(this.model.toJSON()));
+            this.$el.html(this.template(this.model.toJSON()));
+        },
 
-            this.$el.html(this.model.get('name'));
+        saveContent: function(e){
+            // alert('Hey, you unfocused an input!');
+            console.log('Hey, you unfocused an input! -- ' + new Date());
+
+            var uname = $("input[name$='name']").val();     // console.log("saveContent: "+uname);
+            var uemail = $("input[name$='email']").val();   // console.log("saveContent: "+uemail);
+
+            this.model.saveUser(uname, uemail);
         }
     });
 

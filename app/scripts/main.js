@@ -25,12 +25,10 @@ require([
 ], function (Backbone, UserModel, UserView) {
     Backbone.history.start();
 
-    var user = new UserModel({
-        name: 'Leo Dias',
-        email: 'lvasconcelos@avenuecode.com'
-    });
+    var user = new UserModel();
+    user.fetch();
 
-    console.log(JSON.stringify(user));
+    console.log('the first info -- ' + JSON.stringify(user));
 
     var uview = new UserView({model: user});
     uview.render();
