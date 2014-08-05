@@ -7,7 +7,7 @@ define([
     'use strict';
 
     var QuestionModel = Backbone.Model.extend({
-        url: '',
+        urlRoot: '/questions',
 
         initialize: function() {
         },
