@@ -10,5 +10,8 @@
     "requirejs-text": "~2.0.10",
     "modernizr": "~2.7.1"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "backbone-amd": "~1.1.0",
+    "grunt-contrib-imagemin": "~0.7.1"
+  }
 }

@@ -48,6 +48,7 @@ define([
             console.log(JSON.stringify(this));
 
             this.save();
+            // this.save({url: this.urlRoot});
         }
     });
 
