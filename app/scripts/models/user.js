@@ -8,12 +8,10 @@ define([
     'use strict';
 
     var UserModel = Backbone.Model.extend({
-        urlRoot: '/users',
 
         initialize: function() {},
 
         defaults: {
-            id: 1,
             name: '',       // 'Default Name',
             email: '',      // 'name@domain.com',
             answered: [0,0,0,0,0],
@@ -48,7 +46,6 @@ define([
             console.log(JSON.stringify(this));
 
             this.save();
-            // this.save({url: this.urlRoot});
         }
     });
 

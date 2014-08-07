@@ -25,11 +25,11 @@ define([
 
         render: function () {
             this.$el.html(this.template(this.model.toJSON()));
+            return this;
         },
 
         saveContent: function(e){
-            // alert('Hey, you unfocused an input!');
-            console.log('Hey, you unfocused an input! -- ' + new Date());
+            console.log('Hey, you clicked saveUserButton! -- ' + new Date());
 
             var uname = $("input[name$='name']").val();     // console.log("saveContent: "+uname);
             var uemail = $("input[name$='email']").val();   // console.log("saveContent: "+uemail);

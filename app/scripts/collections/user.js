@@ -4,15 +4,13 @@ define([
     'underscore',
     'backbone',
     'localstorage',
-    'models/user'
+    'usermodel'
 ], function (_, Backbone, LocalStorage, UserModel) {
     'use strict';
 
     var UserCollection = Backbone.Collection.extend({
         model: UserModel,
-        localStorage: new Store('backbone-quiz-db')
-        // ,
-        // url: '/users'
+        localStorage: new Store("quiz-user-db")
     });
 
     return UserCollection;
