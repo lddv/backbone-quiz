@@ -1,0 +1,13 @@
+<h4><strong><%= questionNumber %> -- <%= question %></strong></h4>
+<ol type="A">
+	<%
+		_.each(alternatives, function(item, key, list){
+	%>
+	<li class="alternative"><%= item %></li>
+	<%
+		});
+	%>
+</ol>
+<button class="next">Next Question</button>
+
+

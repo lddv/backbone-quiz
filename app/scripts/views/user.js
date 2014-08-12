@@ -4,8 +4,9 @@ define([
     'jquery',
     'underscore',
     'backbone',
-    'templates'
-], function ($, _, Backbone, JST) {
+    'templates',
+    'usercollection'
+], function ($, _, Backbone, JST, UserCollection) {
     'use strict';
 
     var UserView = Backbone.View.extend({
