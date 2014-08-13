@@ -38,11 +38,10 @@ define([
 
         markAlternative: function(ev) {
             // retrieve the element clicked and assign the index to the view var.
-
-            this.electiveAnswer = $(ev.currentTarget).attr('class').slice(18,19);
-            // this.electiveAnswer = $(ev.currentTarget).text();
-            console.log(this.electiveAnswer);
-            $(ev.currentTarget).css('background-color', 'grey');
+            $('.alternative').removeAttr('style');
+            this.electiveAnswer = $(ev.currentTarget).attr('class').slice(18,19); // gets index from class;
+            // console.log(this.electiveAnswer);
+            $(ev.currentTarget).css('background-color', '#ccc');
         },
 
         saveAnswer: function(){
