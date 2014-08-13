@@ -3,7 +3,7 @@
 	<%
 		_.each(alternatives, function(item, key, list){
 	%>
-	<li class="alternative"><%= item %></li>
+	<li class="alternative answer<%= key %>"><%= item %></li>
 	<%
 		});
 	%>

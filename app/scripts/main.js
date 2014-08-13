@@ -53,7 +53,7 @@ require([
     // #####################################################
     
     var questionModel = new QuestionModel();
-    questionModel.set({questionNumber: 1, question: "What is the color of the sky?", alternatives: ['blue', 'yellow', 'red', 'green', 'pink'], rightAnswer:'A'});
+    questionModel.set({questionNumber: 1, question: "What is the color of the sky?", alternatives: ['blue', 'yellow', 'red', 'green', 'pink'], rightAnswer:'0'});
     // console.log('the first info -- ' + JSON.stringify(questionModel));
 
     var questioncol = new QuestionCollection();

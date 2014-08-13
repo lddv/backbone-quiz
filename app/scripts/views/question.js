@@ -32,16 +32,27 @@ define([
         },
 
         render: function () {
-            // _.each(this.model.alternatives, function(item, key){
-            //     $('ol').append('<li class="alternative"><%= item %></li>');
-            // });
             this.$el.html(this.template(this.model.toJSON()));
             return this;
         },
 
-        markAlternative: function () {
-            // retrieve the element clicked and assign the text to the view var.
-            // this.electiveAnswer = $('.alternative').text();
+        markAlternative: function(ev) {
+            // retrieve the element clicked and assign the index to the view var.
+
+            this.electiveAnswer = $(ev.currentTarget).attr('class').slice(18,19);
+            // this.electiveAnswer = $(ev.currentTarget).text();
+            console.log(this.electiveAnswer);
+            $(ev.currentTarget).css('background-color', 'grey');
+        },
+
+        saveAnswer: function(){
+            if (this.electiveAnswer == this.model.get('rightAnswer')) {
+                console.log('Congrats! Correct Answer!');
+                alert('Congrats! Correct Answer!');
+            } else {
+                console.log('Sorry! Wrong Answer!');
+                alert('Sorry! Wrong Answer!');
+            }
         }
     });
 
