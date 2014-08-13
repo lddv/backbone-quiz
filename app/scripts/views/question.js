@@ -18,7 +18,7 @@ define([
 
         className: '',
 
-        electiveAnswer: '',
+        electiveIndex: '',
 
         events: {
             'click .alternative': 'markAlternative',
@@ -39,18 +39,22 @@ define([
         markAlternative: function(ev) {
             // retrieve the element clicked and assign the index to the view var.
             $('.alternative').removeAttr('style');
-            this.electiveAnswer = $(ev.currentTarget).attr('class').slice(18,19); // gets index from class;
-            // console.log(this.electiveAnswer);
+            this.electiveIndex = $(ev.currentTarget).attr('class').slice(18,19); // gets index from class;
+            // console.log(this.electiveIndex);
             $(ev.currentTarget).css('background-color', '#ccc');
+            $('.next').removeAttr('disabled');
         },
 
         saveAnswer: function(){
-            if (this.electiveAnswer == this.model.get('rightAnswer')) {
-                console.log('Congrats! Correct Answer!');
+            $('.next').prop('disabled', true);
+
+            var correctIndex = this.model.get('rightAnswer');
+            var correctAnswer = this.model.get('alternatives')[correctIndex];
+
+            if (this.electiveIndex == correctIndex) {
                 alert('Congrats! Correct Answer!');
             } else {
-                console.log('Sorry! Wrong Answer!');
-                alert('Sorry! Wrong Answer!');
+                alert('Sorry! Wrong Answer! The correct answer is '+correctAnswer+'.');
             }
         }
     });
