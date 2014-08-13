@@ -24,7 +24,8 @@ define([
             return response;
         },
 
-        checkAnswer: function(userAnswer){
+        checkAnswer: function(userAnswer, rightAnswer){
+            // console.log('on model: userAnswer is '+userAnswer+' and rightAnswer is '+rightAnswer);
             if (userAnswer == rightAnswer) {
                 alert("Your answer is correct!");
             } else {

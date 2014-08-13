@@ -40,7 +40,7 @@ define([
             // retrieve the element clicked and assign the index to the view var.
             $('.alternative').removeAttr('style');
             this.electiveIndex = $(ev.currentTarget).attr('class').slice(18,19); // gets index from class;
-            // console.log(this.electiveIndex);
+            console.log(this.electiveIndex);
             $(ev.currentTarget).css('background-color', '#ccc');
             $('.next').removeAttr('disabled');
         },
@@ -49,13 +49,17 @@ define([
             $('.next').prop('disabled', true);
 
             var correctIndex = this.model.get('rightAnswer');
-            var correctAnswer = this.model.get('alternatives')[correctIndex];
+            this.model.checkAnswer(this.electiveIndex, correctIndex);
 
-            if (this.electiveIndex == correctIndex) {
-                alert('Congrats! Correct Answer!');
-            } else {
-                alert('Sorry! Wrong Answer! The correct answer is '+correctAnswer+'.');
-            }
+            // var correctAnswer = this.model.get('alternatives')[correctIndex];
+
+            // if (this.electiveIndex == correctIndex) {
+            //     alert('Congrats! Correct Answer!');
+            // } else {
+            //     alert('Sorry! Wrong Answer! The correct answer is '+correctAnswer+'.');
+            // }
+
+            // then, comes the next question to the view...
         }
     });
 

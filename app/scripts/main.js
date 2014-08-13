@@ -43,7 +43,7 @@ require([
     // var col = new UserCollection({title: "My collection has been created!"});
     var col = new UserCollection();
     col.add(user);
-    console.log('out with the collection -- ' + JSON.stringify(col));
+    // console.log('out with the collection -- ' + JSON.stringify(col));
 
     var uview = new UserView({model: user});
     uview.render();
@@ -58,6 +58,7 @@ require([
 
     var questioncol = new QuestionCollection();
     questioncol.add(questionModel);
+    questioncol.add({questionNumber: 2, question: "What is the color of the ketchup?", alternatives: ['blue', 'yellow', 'red', 'green', 'pink'], rightAnswer:'2'});
 
     var qview = new QuestionView({model: questionModel});
     qview.render();
